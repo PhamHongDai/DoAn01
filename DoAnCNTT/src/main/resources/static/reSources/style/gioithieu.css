@@ -1,0 +1,14 @@
+.body-blog{
+    margin: 50px 90px;
+}
+.header-blog
+{
+    text-align:center;
+}
+.header-blog-p{
+    text-align:center;
+}
+.body-blog-img-blog{
+    display:flex;
+    margin:auto;
+}

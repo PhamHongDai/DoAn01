@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" th:href="@{/vendors/style/owl.carousel.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/vendors/style/owl.theme.default.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/style.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/reset.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/gioithieu.css}">
+  <title>Cửa hàng bán đồ gia dụng </title>
+</head>
+
+<body>
+<div th:replace="_header::_header_"></div>
+<div th:replace="_feature::_feature_"></div>
+<div th:replace="_navigation::_navigation_"></div>
+
+<!-- Start Slide Product -->
+<div class="slider owl-theme">
+  <div class="container owl-carousel">
+    <div class="item">
+      <img src="/images/slider-5.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="/images/slider-4.png" alt="">
+    </div>
+    <div class="item">
+      <img src="/images/slider-3.jpg" alt="">
+    </div>
+  </div>
+</div>
+<!-- End Slide Product -->
+<div class="body-blog">
+  <h1 class="header-blog">Gia Dụng Giá Rẻ Thông Minh 24/7</h1>
+  <p class="header-blog-p">Chuyên cung cấp các sản phẩm chính hãng của thương hiệu Olivo Electronics Hoa Kỳ hãng sản xuất đồ gia dụng cao cấp, các sản phẩm được cung cấp bởi Hi Olivo Store đều có chính sách bảo hành phù hợp nhằm mang đến trải nghiệm tiêu dùng tốt nhất cho khách hàng. Chúng tôi phân phối các sản phẩm đồ gia dụng độc đáo nhất trên thị trường với giá bán cạnh tranh, đồng thời liên tục đưa về những sản phẩm chất lượng với thiết kế đẹp mắt phù hợp với nhu cầu khách hàng và xu thế hiện tại. Giữ kết nối với chúng tôi!</p>
+</div>
+<div class="body-blog-img">
+  <img class="body-blog-img-blog"src="/images/phu.jpg" alt="">
+</div>
+<!-- End List Product -->
+
+<!-- Start Policy -->
+
+<div class="policy">
+  <div class="container">
+    <div class="policy__content">
+      <div class="policy__content-item">
+        <i class="fas fa-sync-alt"></i> HOÀN TRẢ TRONG 30 NGÀY
+      </div>
+      <div class="policy__content-item">
+        <i class="fas fa-truck"></i> GIAO HÀNG TẬN NHÀ
+      </div>
+      <div class="policy__content-item">
+        <i class="fas fa-money-bill-wave"></i> THANH TOÁN LINH HOẠT
+      </div>
+      <div class="policy__content-item">
+        <i class="fas fa-users"></i> HỖ TRỢ NHANH CHÓNG
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Policy -->
+<hr>
+<div th:replace="_footer::_footer_"></div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/reSources/js/script.js"></script>
+<script src="/vendors/js/owl.carousel.min.js"></script>
+
+</html>

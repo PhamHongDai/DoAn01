@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/style/owl.carousel.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/style/owl.theme.default.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/cart.css}">
+    <title>Giỏ hàng</title>
+</head>
+
+<body>
+<div th:replace="_header::_header_"></div>
+<div th:replace="_feature::_feature_"></div>
+<div th:replace="_navigation::_navigation_"></div>
+<!-- Start Cart -->
+
+<div class="cart">
+    <div class="container">
+        <div class="cart__content">
+            <h1 class="title">
+                <span>Giỏ hàng của tôi</span>
+            </h1>
+        </div>
+
+        <div class="cart__block">
+            <div class="cart__block-info" th:swicth="${cartFromList}">
+                <table class="table product__list">
+                    <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Hình ảnh</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="cartForm : ${cartFormList}">
+                        <td class="description">
+                            <h2 th:text="${cartForm.name}"></h2>
+                        </td>
+                        <td class="img">
+                            <img th:src="@{'/'+${cartForm.img}}" alt="">
+                        </td>
+                        <td class="price" th:text="${cartForm.price}"></td>
+                        <td class="quantity">
+                            <h2 type="text" th:text="${cartForm.quantily}"></h2>
+                        </td>
+                        <td class="amount" th:text="${cartForm.money}"></td>
+                        <td class="remove">
+                            <a th:href="@{/user/cart/remove/{id}(id=${cartForm.id})}">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="order order-custom">
+                    <p class="p-custom">Tổng : <td th:text="${sum}"></td></p>
+                    <a class="btn-custom" th:href="@{/user/cart/order}"><i class="fas fa-cart-plus"></i> Đặt Hàng</a>
+
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Cart -->
+<hr>
+<div th:replace="_footer::_footer_"></div>
+</body>
+
+
+</html>

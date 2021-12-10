@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/style/owl.carousel.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/style/owl.theme.default.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/product.css}">
+    <title>Sản phẩm</title>
+</head>
+
+<body>
+<div th:replace="_header::_header_"></div>
+<div th:replace="_feature::_feature_"></div>
+<div th:replace="_navigation::_navigation_"></div>
+
+<!-- Start Product -->
+
+<div class="product">
+    <div class="container">
+        <div class="product__banner">
+            <div class="center">
+                <h2>Thông tin sản phẩm</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="sale__policy">
+                    <h3>
+                        <span>Chính sách bán hàng</span>
+                    </h3>
+
+                    <div class="sale__policy-content">
+                        <ul>
+                            <li>Giao hàng toàn quốc</li>
+                            <li>Thanh toán khi nhận hàng</li>
+                            <li>Đổi trả trong 15 ngày</li>
+                            <li>Hoàn ngay tiền mặt</li>
+                            <li>Đảm bảo chất lượng</li>
+                            <li>Miễn phí vận chuyển đơn hàng từ
+                                <span>1 triệu trở lên</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="buy__policy">
+                        <h3>
+                            <span>Hướng dẫn mua hàng</span>
+                        </h3>
+                        <div class="buy__policy-content">
+                            <ul>
+                                <li>Mua hàng trực tuyến trên website
+                                    <a
+                                            href="http://127.0.0.1:5500/FE/trang-chu.html">http://127.0.0.1:5500/FE/trang-chu.html</a>
+                                </li>
+                                <li>Gọi sdt <span>0903 113 114</span> để mua hàng</li>
+                                <li>Mua tại shop đ/c : <span>1 Võ Văn Ngân, Linh Chiểu, Thủ Đức, Thành phố Hồ Chí
+                                            Minh</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="product__block">
+                    <div class="row">
+                        <form action="#" th:action="@{/user/cart/add/{id}(id=${product.id})}" method="post">
+                            <tr  th:object="${product}">
+                                <div class="col-6 sp-wrap">
+                                    <div class="sp-img">
+                                        <a>
+                                            <img th:src="@{'/' + ${product.imgurl}}" alt="" style="width: 100%;">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 product-detail" style="font-family: cursive;float: right">
+                                    <li>Tên: <h2 th:text="${product.name}"></h2></li>
+                                    <li>Giá: <h2 class="price" th:text="${product.price}"></h2></li>
+                                    <span>Mã SP : <p th:text="${product.id}"></p></span>
+
+                                    <div class="product-description">
+                                        <p th:text="*{context}"></p>
+                                    </div>
+
+                                    <div class="size">
+                                        Size: Free Size
+                                    </div>
+
+                                    <div class="quantity">
+                                        <div class="minusBtn minusText">
+                                            <i class="fas fa-minus"></i>
+                                        </div>
+                                        <input type="number" th:field="*{quantily}" id="quantily" value="1" min="0">
+                                        <div class="plusBtn plusText">
+                                            <i class="fas fa-plus"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            <div class="addToCart">
+                                <button class="btn btn-danger buyButton" style="background-color: red">
+                                    <i class="fas fa-shopping-cart paddingRightCart">
+                                        Thêm vào giỏ hàng
+                                    </i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Product -->
+
+<hr>
+<div th:replace="_footer::_footer_"></div>
+</body>
+
+</html>

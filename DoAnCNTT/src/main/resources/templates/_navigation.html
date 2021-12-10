@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div th:fragment = "_navigation_">
+    <div class="navigation">
+        <div class="container">
+            <div class="navigation__menu">
+                <ul>
+                    <li><a th:href="@{/}">TRANG CHỦ</a></li>
+                    <li><a th:href="@{/gioithieu}">GIỚI THIỆU</a></li>
+                    <li><a th:href="@{/blog}">BLOG</a></li>
+
+                    <li><a th:href="@{/contact}">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

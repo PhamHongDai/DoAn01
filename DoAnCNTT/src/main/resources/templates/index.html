@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/style/owl.carousel.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/vendors/style/owl.theme.default.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/reSources/style/reset.css}">
+    <title>Cửa hàng bán đồ gia dụng </title>
+</head>
+
+<body>
+<div th:replace="_header::_header_"></div>
+<div th:replace="_feature::_feature_"></div>
+<div th:replace="_navigation::_navigation_"></div>
+
+<!-- Start Slide Product -->
+<div class="slider owl-theme">
+    <div class="container owl-carousel">
+        <div class="item">
+            <img src="/images/slider-5.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="/images/slider-4.png" alt="">
+        </div>
+        <div class="item">
+            <img src="/images/slider-3.jpg" alt="">
+        </div>
+    </div>
+</div>
+<!-- End Slide Product -->
+
+<!-- Start List Product-->
+<div class="catalog">
+    <div class="container">
+        <div class="catalog__title">
+            <h3>
+                <span>Các sản phẩm nổi bật</span>
+            </h3>
+        </div>
+        <div class="catalog__content" th:switch="${products}">
+            <h2 th:case="null">No Product yet!</h2>
+            <!--                <div th:case="*">-->
+            <tbody>
+            <tr th:each="product : ${products}">
+                <div class="catalog__content-item">
+                    <div class="item__img">
+                        <a>
+                            <img th:src="${product.imgurl}" alt="">
+                        </a>
+                    </div>
+                    <div class="item__info">
+                        <a th:text="${product.name}"></a>
+                        <span th:text="${product.price}"></span>
+                        <a class="btn-add" th:href="@{/product/{id}(id=${product.id})}"><i class="fas fa-cart-plus"></i>Chi Tiết</a>
+                    </div>
+                </div>
+            </tr>
+            </tbody>
+            <!--                </div>-->
+        </div>
+    </div>
+</div>
+<!-- End List Product -->
+<div class="info-header">
+    <div class="info-informaiton">
+        <div class="info-header-title">
+            <h1 class="info-title">TIN TỨC NỔI BẬT</h1>
+            <p class="info-title-p">Chúng tôi luôn cập nhật những tin tức mới nhất về đồ gia dụng nhà bếp đến với khách hàng!</p>
+        </div>
+        <!-- blog-item-->
+        <div class="blog-list">
+            <div class="blog-item1">
+                <img src="images/footer-1.jpg" alt="" class="blog-img">
+                <div class="blog-body">
+                    <h3 class="blog-heading">Detox cơ thể hiệu quả với công thức làm nước ép cần tây - dưa chuột - cà rốt</h3>
+                    <p class="place-time">Việc chăm sóc da thông thường bằng các biện pháp bên ngoài chỉ giúp làm sạch phần bề mặt, tuy nhiên nh...<a href="https://hiolivostore.vn/detox-co-the-hieu-qua-voi-cong-thuc-lam-nuoc-ep-can-tay-dua-chuot-ca-rot">[Đọc tiếp]</a></p>
+                </div>
+            </div>
+            <div class="blog-item2">
+                <img src="images/footer-2.jpg" alt="" class="blog-img">
+                <div class="blog-body">
+                    <h3 class="blog-heading">Công thức làm sữa gạo lứt nâu - hạt sen mix hồ đào đơn giản mà ngon với máy xay Olivo X20</h3>
+                    <p class="place-time">Gạo lứt được coi là một trong những thực phẩm "thần kỳ" giúp chị em giảm cân, giữ dáng rất hiệu quả. N... <a href="https://hiolivostore.vn/cong-thuc-lam-sua-gao-lut-nau-hat-sen-mix-ho-dao-don-gian-ma-ngon-voi-may-xay-olivo-x20">[Đọc tiếp]</a></p>
+                </div>
+            </div>
+            <div class="blog-item3">
+                <img src="images/footer-3.jpg" alt="" class="blog-img">
+                <div class="blog-body">
+                    <h3 class="blog-heading">Rau củ nướng đơn giản bắt mắt với nồi chiên không dầu</h3>
+                    <p class="place-time">Ăn thịt, cá nhiều quá cũng ngán nên các chị em nội trợ thử chuyển sang các loại rau củ nướng xem sao. Vừa ... <a href="https://hiolivostore.vn/rau-cu-nuong-don-gian-bat-mat-voi-noi-chien-khong-dau">[Đọc tiếp]</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start Policy -->
+
+<div class="policy">
+    <div class="container">
+        <div class="policy__content">
+            <div class="policy__content-item">
+                <i class="fas fa-sync-alt"></i> HOÀN TRẢ TRONG 30 NGÀY
+            </div>
+            <div class="policy__content-item">
+                <i class="fas fa-truck"></i> GIAO HÀNG TẬN NHÀ
+            </div>
+            <div class="policy__content-item">
+                <i class="fas fa-money-bill-wave"></i> THANH TOÁN LINH HOẠT
+            </div>
+            <div class="policy__content-item">
+                <i class="fas fa-users"></i> HỖ TRỢ NHANH CHÓNG
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Policy -->
+<hr>
+<div th:replace="_footer::_footer_"></div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/reSources/js/script.js"></script>
+<script src="/vendors/js/owl.carousel.min.js"></script>
+
+</html>

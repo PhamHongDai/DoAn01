@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>ĐĂNG KÝ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords"
+          content="Official Signup Form Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script
+            type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <!-- /fonts -->
+    <!-- css -->
+    <link th:href="@{/vendors/style/font-awesome.min.css}" rel="stylesheet" type="text/css" media="all" />
+    <link th:href="@{/reSources/style/sign-up.css}" rel='stylesheet' type='text/css' media="all" />
+    <!-- /css -->
+</head>
+
+<body>
+
+<div class="content-w3ls">
+    <div class="content-agile1">
+        <h2 class="agileits1">Official</h2>
+
+    </div>
+    <div class="content-agile2">
+        <h3 class="w3lss">Đăng ký tài khoản</h3>
+        <form action="#" th:action="@{/register}" th:object="${userForm}" method="post">
+            <div class="form-control w3layouts">
+                <input type="email" id="email" name="email" th:field="*{email}" placeholder="mail@example.com"
+                       title="Please enter a valid email" required="">
+            </div>
+
+            <div class="form-control agileinfo">
+                <input type="password" class="lock" name="password" th:field="*{password}" placeholder="Password" id="password"
+                       required="">
+            </div>
+            <div class="form-control agileinfo">
+                <input type="text" class="lock" name="name" th:field="*{userName}" placeholder="Name" id="name"
+                       required="">
+            </div>
+            <div class="form-control agileinfo">
+                <input type="text" class="lock" name="phone" th:field="*{phone}" placeholder="Phone" id="phone"
+                       required="">
+            </div>
+            <div class="form-control agileinfo">
+                <input type="text" class="lock" name="address" th:field="*{address}" placeholder="Address" id="address"
+                       required="">
+            </div>
+            <input type="submit" class="register" value="Đăng ký">
+        </form>
+    </div>
+    <div class="clear"></div>
+</div>
+</body>
+
+</html>
