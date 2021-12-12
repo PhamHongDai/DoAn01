@@ -94,7 +94,7 @@ b {
 
 /* ============ 1,Header ===========*/
 .header {
-  background: #f46164;
+  background: black;
   border-top: 2px solid #f46164;
 }
 .header .container {
@@ -201,8 +201,8 @@ b {
 }
 .detail .container .detail__content .title span {
   font-size: 17px;
-  background: #f46164 none repeat scroll 0 0;
-  color: #fff;
+  background: black none repeat scroll 0 0;
+  color: black;
   display: inline-block;
   padding: 9px 10px;
   position: relative;
