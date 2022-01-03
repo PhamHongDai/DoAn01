@@ -39,9 +39,9 @@ public class AdminController {
     private PasswordEncoder passwordEncoder;
     @GetMapping()
     public String adminPage(){
-        return "/admin";
+        return "admin";
     }
-    @GetMapping("/product")
+    @GetMapping("/product") //tra lai danh sach san pham cua shop
     public String adminProducts(Model model){
         List<Product> productList = productRepository.findAll();
         model.addAttribute("products", productList);
@@ -65,7 +65,7 @@ public class AdminController {
                     ,productForm.getContext()
                     ,productForm.getQuantily());
             String fileName = StringUtils.cleanPath(productForm.getMultipartFile().getOriginalFilename());
-            String currentDirectory = System.getProperty("user.dir");
+            String currentDirectory = System.getProperty("user.dir"); //để có được đường dẫn tuyệt đối của một thư mục
             FileUploadUtil.saveFile(currentDirectory + "/src/main/resources/static/images/products/", fileName, productForm.getMultipartFile());
             String fileUrl = "images/products/" + fileName;
             product.setImgurl(fileUrl);

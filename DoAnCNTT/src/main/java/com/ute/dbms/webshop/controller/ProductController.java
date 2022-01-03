@@ -20,13 +20,14 @@ public class ProductController {
 
 
     @GetMapping(value = "/{id}")
-    public String product(@PathVariable("id") int id, Model model){
+    public String product(@PathVariable("id") int id, Model model){     // thực hiển truy vấn đến /product/{id} với
+                                                                        // id được truyền vào thì getEmployeeById() sẽ được gọi với giá trị id tương ứng.
         Product product = productRepository.findById(id);
         product.setQuantily(1);
         if(product == null){
             System.out.println("\n\n null \n\n");
         }
-        model.addAttribute("product", product);
+        model.addAttribute("product", product); //được sử dụng để thêm dữ liệu vào model.
         return "product";
     }
 }

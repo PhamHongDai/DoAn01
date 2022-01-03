@@ -36,48 +36,41 @@ public class MainController {
     private PasswordEncoder passwordEncoder;
     @GetMapping(value = "/")
     public String home1(Model model) {
-        model.addAttribute("products", productRepository.findAll());
+        model.addAttribute("products", productRepository.findAll()); //phương thức findAll trả về một đối tượng Trang
         return "index";
     }
 
-//    @GetMapping(value = "/sanpham")
-//  public String home(Model model) {
-//        List<Product> productList = productRepository.findAll();
-//        model.addAttribute("products", productList);
-//    return "sanpham";
-//   }
-
     @GetMapping("/contact")
     public String contact() {
-        return "/lienhe";
+        return "lienhe";
     }
     @GetMapping("/blog")
     public String blog() {
-        return "/blog";
+        return "blog";
     }
     @GetMapping("/gioithieu")
     public String gioithieu() {
-        return "/gioithieu";
+        return "gioithieu";
     }
 
 
     @GetMapping("/login")
     public String login() {
-        return "/sign-in";
+        return "sign-in";
     }
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {
-            new SecurityContextLogoutHandler().logout(request, response, auth);
-        }
+            new SecurityContextLogoutHandler().logout(request, response, auth); //đăng xuất cũng yêu cầu xóa một số hoặc tất cả cookie của người dùng.
+        }                                                                       //tạo LogoutHandler của riêng mình để lặp lại tất cả các cookie và hết hạn chúng khi đăng xuất:
         return "redirect:/index";
     }
     @GetMapping(value = "/signup")
     public String  signup(Model model){
-        model.addAttribute("userForm", new UserForm());
-        return "sign-up";
+        model.addAttribute("userForm", new UserForm()); //trong đối tượng Model có phương thức addAttribute()
+        return "sign-up";                                            // được sử dụng để thêm dữ liệu vào model
     }
     @PostMapping("/register")
     public String register(@Valid UserForm userForm){

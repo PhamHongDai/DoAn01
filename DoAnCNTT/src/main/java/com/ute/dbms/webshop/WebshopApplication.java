@@ -1,6 +1,9 @@
 package com.ute.dbms.webshop;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
+
 @SpringBootApplication
 public class WebshopApplication {
     public static void main(String[] args) {
